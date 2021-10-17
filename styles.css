@@ -1,0 +1,223 @@
+
+@font-face {
+    font-family: "Roboto";
+    src: url("fonts/Roboto-Thin.ttf");
+    line-height: 100;
+  }
+  @font-face {
+    font-family: "Roboto";
+    src: url("fonts/Roboto-Medium.ttf");
+    font-weight: 500;
+  }
+  @font-face {
+    font-family: "Roboto";
+    src: url("fonts/Roboto-Bold.ttf");
+    font-weight: 700;
+  }
+  @font-face {
+    font-family: "Forum";
+    src: url("fonts/Forum-Regular.ttf");
+  }
+  @font-face {
+    font-family: "Roboto";
+    src: url("fonts/Roboto-Regular.ttf");
+  }
+  @font-face {
+    font-family: "Roboto";
+    src: url("fonts/Roboto-Light.ttf");
+    line-height: 300;
+  }
+
+body {
+    margin: 0;
+    background-color:darkgrey;
+    color:linen;
+    font-family: "Roboto";
+    font-weight: 300;
+    font-size: 16px;
+}
+
+
+.slides {
+    outline: 2px solid rgb(92, 92, 92);
+    overflow: hidden;
+    grid-area: slides;
+    border-radius: 0.9rem;
+    box-shadow: 0 0 0.9rem rgba(0, 0, 0, 0.3);
+}
+
+
+.memes {
+    margin: 7vh 8vw;
+    display: grid;
+    grid-template-areas:
+            "slides slides"
+            "buttons buttons"
+            "text text";
+    grid-template-columns: 1fr 12rem;
+    column-gap: 1.5rem;
+    row-gap: 5vh;
+    align-items: center;
+}
+.slide {
+    height: 70vh;
+    display: flex;
+    justify-content: center;
+    background-color: black;
+}
+.slides-wrapper {
+    display: grid;
+    transition: transform 0.4s ease-in-out;
+    grid-template-columns: repeat(5, 90vw);
+}
+
+.slide:nth-child(1) {
+    background: url('image/1.jpg') center/cover no-repeat;
+}
+.slide:nth-child(2) {
+    background: url('image/2.jpg') center/cover no-repeat;
+}
+.slide:nth-child(3) {
+    background: url('image/3.jpg') center/cover no-repeat;
+}
+.slide:nth-child(4) {
+    background: url('image/4.jpg') center/cover no-repeat;
+}
+.slide:nth-child(5) {
+    background: url('image/5.jpg') center/cover no-repeat;
+}
+
+.slide img {
+    object-fit: contain;
+    height: calc(100% + 1px);
+    width: 100%;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+}
+.text {
+    grid-area: text;
+    overflow: hidden;
+}
+
+.caption {
+    width: 100%;
+}
+.text-wrapper {
+    display: grid;
+    transition: transform 0.4s ease-in-out;
+    grid-template-columns: repeat(5, calc(90vw));
+}
+.buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-area: buttons;
+}
+
+.buttons a {
+    display: block;
+    padding: 0.5rem;
+    border-radius: 50%;
+    color:red;
+    transition: color 0.4s ease-in-out;
+}
+
+.buttons a i {
+    display: block;
+    height: 10px;
+    width: 10px;
+    border-radius: 50%;
+    border: 1px solid currentColor;
+    background-color: transparent;
+}
+
+.buttons a+a i {
+    background-color: currentColor;
+}
+.buttons a:hover {
+    color:seashell;
+}
+
+#mem1:target ~ .memes .text-wrapper {
+    transform: translateX(0);
+}
+#mem2:target ~ .memes .text-wrapper {
+    transform: translateX(-90vw);
+}
+#mem3:target ~ .memes .text-wrapper {
+    transform: translateX(calc(-90vw * 2));
+}
+#mem4:target ~ .memes .text-wrapper {
+    transform: translateX(calc(-90vw * 3));
+}
+#mem5:target ~ .memes .text-wrapper {
+    transform: translateX(calc(-90vw * 4));
+}
+
+#mem1:target ~ .memes .slides-wrapper {
+    transform: translateX(0);
+}
+#mem2:target ~ .memes .slides-wrapper {
+    transform: translateX(-90vw);
+}
+#mem3:target ~ .memes .slides-wrapper {
+    transform: translateX(calc(-90vw * 2));
+}
+#mem4:target ~ .memes .slides-wrapper {
+    transform: translateX(calc(-90vw * 3));
+}
+#mem5:target ~ .memes .slides-wrapper {
+    transform: translateX(calc(-90vw * 4));
+}
+
+body>div:target ~.memes>.buttons>a>i {
+    background-color: currentColor;
+}
+#mem1:target ~.memes>.buttons>a:nth-child(1)>i {
+    background-color: transparent;
+}
+#mem2:target ~.memes>.buttons>a:nth-child(2)>i {
+    background-color: transparent;
+}
+#mem3:target ~.memes>.buttons>a:nth-child(3)>i {
+    background-color: transparent;
+}
+#mem4:target ~.memes>.buttons>a:nth-child(4)>i {
+    background-color: transparent;
+}
+#mem5:target ~.memes>.buttons>a:nth-child(5)>i {
+    background-color: transparent;
+}
+
+@media (min-width: 1024px) {
+    .memes {
+        grid-template-areas:
+            "slides slides"
+            "text buttons";
+    }
+    #mem1:target ~ .memes .text-wrapper {
+        transform: translateX(0);
+    }
+    #mem2:target ~ .memes .text-wrapper {
+        transform: translateX(calc((90vw - 13.5rem) * -1 + 1px));
+    }
+    #mem3:target ~ .memes .text-wrapper {
+        transform: translateX(calc((90vw - 13.5rem) * -2 + 1px));
+    }
+    #mem4:target ~ .memes .text-wrapper {
+        transform: translateX(calc((90vw - 13.5rem) * -3 + 1px));
+    }
+    #mem5:target ~ .memes .text-wrapper {
+        transform: translateX(calc((90vw - 13.5rem) * -4 + 1px));
+    }
+    .text-wrapper {
+        grid-template-columns: repeat(5, calc(90vw - 13.5rem));
+    }
+    .buttons {
+        justify-content: flex-end;
+    }
+    .caption {
+        text-align: left;
+    }
+    
+}
