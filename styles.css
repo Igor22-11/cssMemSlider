@@ -48,7 +48,7 @@ body {
 
 
 .memes {
-    margin: 5vh 5vw;
+    margin: 7vh 8vw;
     display: grid;
     grid-template-areas:
             "slides slides"
@@ -219,4 +219,5 @@ body>div:target ~.memes>.buttons>a>i {
     .caption {
         text-align: left;
     }
+    
 }
