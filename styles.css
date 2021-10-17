@@ -39,15 +39,15 @@ body {
 
 
 .slides {
+    outline: 2px solid rgb(92, 92, 92);
     overflow: hidden;
     grid-area: slides;
-    border-radius: 0.625rem;
-    box-shadow: 0 0 0.625rem rgba(0, 0, 0, 0.3);
+    border-radius: 0.9rem;
+    box-shadow: 0 0 0.9rem rgba(0, 0, 0, 0.3);
 }
 
 
-
-.mems {
+.memes {
     margin: 5vh 5vw;
     display: grid;
     grid-template-areas:
@@ -138,76 +138,76 @@ body {
     color:seashell;
 }
 
-#mem1:target ~ .mems .text-wrapper {
+#mem1:target ~ .memes .text-wrapper {
     transform: translateX(0);
 }
-#mem2:target ~ .mems .text-wrapper {
+#mem2:target ~ .memes .text-wrapper {
     transform: translateX(-90vw);
 }
-#mem3:target ~ .mems .text-wrapper {
+#mem3:target ~ .memes .text-wrapper {
     transform: translateX(calc(-90vw * 2));
 }
-#mem4:target ~ .mems .text-wrapper {
+#mem4:target ~ .memes .text-wrapper {
     transform: translateX(calc(-90vw * 3));
 }
-#mem5:target ~ .mems .text-wrapper {
+#mem5:target ~ .memes .text-wrapper {
     transform: translateX(calc(-90vw * 4));
 }
 
-#mem1:target ~ .mems .slides-wrapper {
+#mem1:target ~ .memes .slides-wrapper {
     transform: translateX(0);
 }
-#mem2:target ~ .mems .slides-wrapper {
+#mem2:target ~ .memes .slides-wrapper {
     transform: translateX(-90vw);
 }
-#mem3:target ~ .mems .slides-wrapper {
+#mem3:target ~ .memes .slides-wrapper {
     transform: translateX(calc(-90vw * 2));
 }
-#mem4:target ~ .mems .slides-wrapper {
+#mem4:target ~ .memes .slides-wrapper {
     transform: translateX(calc(-90vw * 3));
 }
-#mem5:target ~ .mems .slides-wrapper {
+#mem5:target ~ .memes .slides-wrapper {
     transform: translateX(calc(-90vw * 4));
 }
 
-body>i:target ~.mems>.buttons>a>i {
+body>div:target ~.memes>.buttons>a>i {
     background-color: currentColor;
 }
-#mem1:target ~.mems>.buttons>a:nth-child(1)>i {
+#mem1:target ~.memes>.buttons>a:nth-child(1)>i {
     background-color: transparent;
 }
-#mem2:target ~.mems>.buttons>a:nth-child(2)>i {
+#mem2:target ~.memes>.buttons>a:nth-child(2)>i {
     background-color: transparent;
 }
-#mem3:target ~.mems>.buttons>a:nth-child(3)>i {
+#mem3:target ~.memes>.buttons>a:nth-child(3)>i {
     background-color: transparent;
 }
-#mem4:target ~.mems>.buttons>a:nth-child(4)>i {
+#mem4:target ~.memes>.buttons>a:nth-child(4)>i {
     background-color: transparent;
 }
-#mem5:target ~.mems>.buttons>a:nth-child(5)>i {
+#mem5:target ~.memes>.buttons>a:nth-child(5)>i {
     background-color: transparent;
 }
 
 @media (min-width: 1024px) {
-    .mems {
+    .memes {
         grid-template-areas:
             "slides slides"
             "text buttons";
     }
-    #mem1:target ~ .mems .text-wrapper {
+    #mem1:target ~ .memes .text-wrapper {
         transform: translateX(0);
     }
-    #mem2:target ~ .mems .text-wrapper {
+    #mem2:target ~ .memes .text-wrapper {
         transform: translateX(calc((90vw - 13.5rem) * -1 + 1px));
     }
-    #mem3:target ~ .mems .text-wrapper {
+    #mem3:target ~ .memes .text-wrapper {
         transform: translateX(calc((90vw - 13.5rem) * -2 + 1px));
     }
-    #mem4:target ~ .mems .text-wrapper {
+    #mem4:target ~ .memes .text-wrapper {
         transform: translateX(calc((90vw - 13.5rem) * -3 + 1px));
     }
-    #mem5:target ~ .mems .text-wrapper {
+    #mem5:target ~ .memes .text-wrapper {
         transform: translateX(calc((90vw - 13.5rem) * -4 + 1px));
     }
     .text-wrapper {
